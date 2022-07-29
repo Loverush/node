@@ -745,7 +745,26 @@ const (
 						"type": "array",
 						"items": "org.binance.dex.model.avro.Validator"
 					}
-				}], "default": null}
+				}], "default": null},
+				{"name": "crossStakeEvents", "type": ["null", {
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": {
+							"type": "record",
+							"name": "CrossStakeEvent",
+							"namespace": "org.binance.dex.model.avro",
+							"fields": [
+								{"name": "chainId", "type": "string"},
+								{"name": "type", "type": "string"},
+								{"name": "delegator", "type": "string"},
+								{"name": "srcValidator", "type": "string"},
+								{"name": "dstValidator", "type": "string"},
+								{"name": "relayFee", "type": "long"}
+							]
+						}
+					}
+				}], "default": null},
 			]
 		}
 	`
